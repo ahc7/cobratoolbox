@@ -319,19 +319,19 @@ if ~isempty(flux) %if flux vector is not empty
         DeadRxnsID2(1)={'-1'};%declare variable
         
         %performe FVA
-        [minFlux,maxFlux] = fluxVariability(model,100,'max',rxns);
-        
-        for v=1:length(minFlux)
-            if minFlux(v)<1e-9&maxFlux(v)==minFlux(v)&minFlux(v)>-1e-9
-                 if strcmp(DeadRxnsID2(1),'-1')
-                     DeadRxnsID2(1)=rxns(v);                                          
-                 else
-                      DeadRxnsID2(length(DeadRxnsID2)+1)=rxns(v);                                              
-                end
-            end
-        end     
-        
-        deadRxns=DeadRxnsID2';  %return list of dead reactions 
+%         [minFlux,maxFlux] = fluxVariability(model,100,'max',rxns);
+%         
+%         for v=1:length(minFlux)
+%             if minFlux(v)<1e-9&maxFlux(v)==minFlux(v)&minFlux(v)>-1e-9
+%                  if strcmp(DeadRxnsID2(1),'-1')
+%                      DeadRxnsID2(1)=rxns(v);                                          
+%                  else
+%                       DeadRxnsID2(length(DeadRxnsID2)+1)=rxns(v);                                              
+%                 end
+%             end
+%         end     
+%         
+%         deadRxns=DeadRxnsID2';  %return list of dead reactions 
 
         if strcmp(drawMap,'true') %if drawMap=true
             
